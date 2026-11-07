@@ -1,0 +1,7 @@
+Design Memo: Social Network Graph
+
+I chose to use a graph for this social network because it makes the most sense for representing friendships between people. Each person is a node, and each friendship is an edge connecting two nodes. Since friendships work both ways in this project, I used an undirected graph. When Alex becomes friends with Jordan, Jordan also becomes friends with Alex. This is similar to how friendships work on many social media platforms.
+
+A regular list would not work as well because it could store the people, but it would not clearly show how everyone is connected. A tree would also be limiting because it follows a parent-child structure. In a social network, one person can have multiple friends, and those friends can also be connected to each other. Graphs make these relationships easier to represent.
+
+For my implementation, I used an adjacency list by giving each Person object a list of friends. I also used a dictionary to store people by name, which makes finding someone easier. One trade-off I noticed is that adding a friendship requires updating both people's lists. My code also checks for duplicate friendships, which takes extra time as the friends lists grow. Printing the network is straightforward, but it still has to go through every person and their friends. Overall, I think an adjacency list is a good choice because it is simple, easy to understand, and does not waste space storing connections that do not exist.
